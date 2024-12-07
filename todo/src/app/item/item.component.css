@@ -101,17 +101,7 @@ transform: scale(1);
 [type="checkbox"]:not(:checked):focus + label:before {
 border: 2px dotted blue;
 }
-5. Now that we have an ItemComponent with logic, we’ll use it in our app.component. Add the following
-line near the top of the app.component.ts file. This will import the ItemComponent functionality into
-our main app component:
-import { Item } from "./item";
-We also need to hook up the delete functionality we created in the item component. To do this, add the
-following code below the “addItem” function in app.component.ts:
-remove(item: Item) {
-this.allItems.splice(this.allItems.indexOf(item), 1);
-}
-6. Finally we’ll update the HTML for our app component to use our item component. Replace the current
-unordered list (ul) in app.component.html with the following:
+
 <h2>
 {{items.length}}
 <span *ngIf="items.length === 1; else elseBlock">item</span>
